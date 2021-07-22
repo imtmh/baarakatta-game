@@ -1,0 +1,77 @@
+$boardSize: 600px;
+$cellWidth: 120px;
+$cellHeight: 118px;
+.game {
+  display: flex;
+  justify-content: space-between;
+  .board {
+    border-top: 1px solid gray;
+    border-left: 1px solid gray;
+    width: $boardSize;
+    height: $boardSize;
+    border-radius: 5px;
+    margin: 10px auto;
+    .row {
+      display: flex;
+    }
+    .cell {
+      width: $cellWidth;
+      height: $cellHeight;
+      border-right: 1px solid gray;
+      border-bottom: 1px solid gray;
+      .player {
+        border-radius: 50px;
+        height: 25px;
+        width: 25px;
+      }
+      .player1 {
+        background-color: red;
+      }
+      .player2 {
+        background-color: green;
+      }
+    }
+    .cross {
+      position: relative;
+      // height: 150px; /* this can be anything */
+      // width: 150px; /* ...but maintain 1:1 aspect ratio */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .cross::before,
+    .cross::after {
+      position: absolute;
+      content: "";
+      left: -24px;
+      width: 140%;
+      height: 2px; /* cross thickness */
+      background-color: rgb(0, 197, 66);
+    }
+
+    .cross::before {
+      transform: rotate(45deg);
+    }
+
+    .cross::after {
+      transform: rotate(-45deg);
+    }
+  }
+  .player-portal {
+    .player-box {
+      display: flex;
+      .player-dice {
+        button {
+          height: 20px;
+        }
+        div {
+          font-size: xxx-large;
+          height: 100px;
+          width: 100px;
+          border: 1px solid gray;
+        }
+      }
+    }
+  }
+}
